@@ -1,6 +1,8 @@
 import Banner from "../components/home/Banner";
+import Featured from "../components/home/Featured";
 import Menu from "../components/home/Menu";
 import Slider from "../components/home/Slider";
+import Testimonials from "../components/home/Testimonials";
 import Navbar from "./shared/Navbar";
 
 const Home = () => {
@@ -11,7 +13,9 @@ const Home = () => {
       <div className="container mx-auto">
         <Slider />
       </div>
-      <Menu/>
+      <Menu />
+      <Featured />
+      <Testimonials/>
     </main>
   );
 };

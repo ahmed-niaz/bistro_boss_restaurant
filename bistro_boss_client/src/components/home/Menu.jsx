@@ -1,3 +1,5 @@
+import PopularMenu from "./PopularMenu";
+
 const Menu = () => {
   return (
     <main className="mt-24">
@@ -9,6 +11,7 @@ const Menu = () => {
         From Our Menu
       </h1>
       <div className="divider w-1/4 mx-auto"></div>
+      <PopularMenu/>
     </main>
   );
 };
