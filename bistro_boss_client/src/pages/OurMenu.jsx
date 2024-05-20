@@ -43,28 +43,28 @@ const OurMenu = () => {
 
       {/* dessert menu items */}
       <MenuCategory
-        title="Dessert"
+        title="dessert"
         items={dessert}
         coverImg={dessert_bg}
         heading="Indulge in our decadent array of desserts, crafted to satisfy every sweet tooth. From rich, velvety chocolate creations to light and fruity delights, each dessert is a perfect finale to your dining experience."
       />
       {/* Salad menu items */}
       <MenuCategory
-        title="Salad"
+        title="salad"
         items={salad}
         coverImg={salad_bg}
         heading="Savor the freshness of our salads, featuring a medley of crisp vegetables, flavorful dressings, and imaginative toppings. Perfect as a light meal or a complement to your main course, our salads are a celebration of healthy and delicious eating."
       />
       {/* Soup menu items */}
       <MenuCategory
-        title="Soup"
+        title="soup"
         items={soup}
         coverImg={soup_bg}
         heading="Discover our collection of soups, where each bowl is a blend of nourishing ingredients and comforting flavors. Whether you crave a hearty chowder, a creamy bisque, or a light broth, our soups are sure to warm your soul."
       />
       {/* Pizza menu items */}
       <MenuCategory
-        title="Pizza"
+        title="pizza"
         items={pizza}
         coverImg={pizza_bg}
         heading="Explore our mouthwatering selection of pizzas, each crafted with the finest ingredients and baked to perfection. From classic Margherita to gourmet specialties, our pizzas are designed to delight every palate and satisfy every craving."
