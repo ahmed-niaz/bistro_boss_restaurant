@@ -4,6 +4,7 @@ import ErrorPage from "../pages/ErrorPage";
 import Home from "../pages/Home";
 import OurMenu from "../pages/OurMenu";
 import OurShop from "../pages/OurShop";
+import Login from "../pages/Login";
 
 export const router = createBrowserRouter([
   {
@@ -22,6 +23,9 @@ export const router = createBrowserRouter([
       {
         path:'/our-shop/:category',
         element:<OurShop/>
+      },{
+        path:'/login',
+        element:<Login/>
       }
     ],
   },

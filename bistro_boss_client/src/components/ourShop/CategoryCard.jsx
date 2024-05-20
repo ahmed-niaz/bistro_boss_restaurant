@@ -19,12 +19,22 @@ const CategoryCard = () => {
   return (
     <main className="flex items-center justify-center">
       <Tabs selectedIndex={tabIndex} onSelect={(index) => setTabIndex(index)}>
-        <TabList>
-          <Tab>Salad</Tab>
-          <Tab>Dessert</Tab>
-          <Tab>Pizza</Tab>
-          <Tab>Soup</Tab>
-          <Tab>Drinks</Tab>
+        <TabList className="flex items-center justify-center gap-8 mb-4 ">
+          <Tab className="uppercase font-cinzel hover:cursor-pointer text-xl font-bold text-black">
+            Salad
+          </Tab>
+          <Tab className="uppercase font-cinzel hover:cursor-pointer text-xl font-bold text-black">
+            Dessert
+          </Tab>
+          <Tab className="uppercase font-cinzel hover:cursor-pointer text-xl font-bold text-black">
+            Pizza
+          </Tab>
+          <Tab className="uppercase font-cinzel hover:cursor-pointer text-xl font-bold text-black">
+            Soup
+          </Tab>
+          <Tab className="uppercase font-cinzel hover:cursor-pointer text-xl font-bold text-black">
+            Drinks
+          </Tab>
         </TabList>
 
         <TabPanel>
