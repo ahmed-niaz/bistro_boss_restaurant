@@ -3,7 +3,7 @@ import Footer from "../pages/shared/Footer";
 
 const Root = () => {
   const location = useLocation();
-  const hideFooter = location.pathname.includes("login");
+  const hideFooter = location.pathname.includes("login") || location.pathname.includes('register');
   return (
     <main className="font-inter mx-w-[1920px] mx-auto">
       <Outlet />

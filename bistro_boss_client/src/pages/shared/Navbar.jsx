@@ -1,9 +1,10 @@
-// import { useContext } from "react";
+
 import { Link, NavLink } from "react-router-dom";
-// import { AuthContext } from "../../providers/FirebaseProvider";
+import useAuth from "../../hooks/useAuth";
+
 
 const Navbar = () => {
-  //   const { user, logOut } = useContext(AuthContext);
+    const { user, logout } = useAuth()
 
   const links = (
     <>
@@ -67,18 +68,6 @@ const Navbar = () => {
           our shop
         </NavLink>
       </li>
-      <li>
-        <NavLink
-          to="/login"
-          className={({ isActive }) =>
-            isActive
-              ? " uppercase text-[#EEFF25] bg-none text-sm font-bold"
-              : "text-sm font-bold text-white"
-          }
-        >
-          login
-        </NavLink>
-      </li>
     </>
   );
   return (
@@ -126,7 +115,7 @@ const Navbar = () => {
             role="button"
             className="btn btn-ghost btn-circle avatar"
           ></div>
-          {/* {user ? (
+          {user ? (
             <div className="dropdown dropdown-end">
               <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
                 <div title={user?.displayName} className="w-10 rounded-full">
@@ -140,7 +129,7 @@ const Navbar = () => {
               </label>
               <ul
                 tabIndex={0}
-                className="menu menu-sm dropdown-content mt-3 z-10 p-2 shadow bg-base-100 rounded-box w-52"
+                className="menu menu-sm dropdown-content mt-3 z-10 p-2 shadow bg-base-100 bg-transparent rounded-box w-52"
               >
                 <li>
                   <button className="btn btn-sm  btn-ghost">
@@ -148,17 +137,24 @@ const Navbar = () => {
                   </button>
                 </li>
                 <li>
-                  <button onClick={logOut} className="btn btn-sm  btn-ghost">
+                  <button onClick={logout} className="btn btn-sm   btn-ghost">
                     Logout
                   </button>
                 </li>
               </ul>
             </div>
-          ) : (
-            <Link to="/login">
-              <p className="text-[#252422] bg-none text-sm font-bold">Login</p>
-            </Link>
-          )} */}
+          ) : <div>
+          <NavLink
+            to="/login"
+            className={({ isActive }) =>
+              isActive
+                ? " uppercase text-[#EEFF25] bg-none text-sm font-bold"
+                : "text-sm font-bold text-white"
+            }
+          >
+            login
+          </NavLink>
+        </div>}
         </div>
       </div>
     </main>
