@@ -5,7 +5,6 @@ import useCart from "../../hooks/useCart";
 const Navbar = () => {
   const { user, logout } = useAuth();
   const [cart] = useCart()
-  console.log('cart data',cart);
   const links = (
     <>
       <li>
@@ -69,7 +68,7 @@ const Navbar = () => {
         </NavLink>
       </li>
       <li>
-        <NavLink to="/our-shop/salad" className={({ isActive }) =>
+        <NavLink to="/dashboard/my-cart" className={({ isActive }) =>
             isActive
               ? " uppercase text-[#EEFF25] bg-none text-sm font-bold"
               : "text-sm font-bold text-white"

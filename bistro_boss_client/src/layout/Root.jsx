@@ -5,7 +5,7 @@ const Root = () => {
   const location = useLocation();
   const hideFooter = location.pathname.includes("login") || location.pathname.includes('register');
   return (
-    <main className="font-inter mx-w-[1920px] mx-auto">
+    <main className="font-inter max-w-[1920px] mx-auto">
       <Outlet />
       {hideFooter || <Footer />}
     </main>

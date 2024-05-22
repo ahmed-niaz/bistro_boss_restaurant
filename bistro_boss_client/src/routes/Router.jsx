@@ -6,6 +6,13 @@ import OurMenu from "../pages/OurMenu";
 import OurShop from "../pages/OurShop";
 import Login from "../pages/Login";
 import Register from "../pages/Register";
+import Dashboard from "../layout/Dashboard";
+import MyCart from "../dashboardPages/MyCart";
+import UserHome from "../dashboardPages/UserHome";
+import AddReview from "../dashboardPages/AddReview";
+import Reservation from "../dashboardPages/Reservation";
+import MyBooking from "../dashboardPages/MyBooking";
+import PaymentHistory from "../dashboardPages/PaymentHistory";
 
 export const router = createBrowserRouter([
   {
@@ -22,14 +29,46 @@ export const router = createBrowserRouter([
         element: <OurMenu />,
       },
       {
-        path:'/our-shop/:category',
-        element:<OurShop/>
-      },{
-        path:'/login',
-        element:<Login/>
-      },{
-        path:'/register',
-        element:<Register/>
+        path: "/our-shop/:category",
+        element: <OurShop />,
+      },
+      {
+        path: "/login",
+        element: <Login />,
+      },
+      {
+        path: "/register",
+        element: <Register />,
+      },
+    ],
+  },
+  {
+    path: "dashboard",
+    element: <Dashboard />,
+    children: [
+      {
+        path: "my-cart",
+        element: <MyCart />,
+      },
+      {
+        path: "user-home",
+        element: <UserHome />,
+      },
+      {
+        path:'add-review',
+        element:<AddReview/>
+      },
+      {
+       path:'reservation',
+       element:<Reservation/>
+      },
+      {
+        path:'my-booking',
+        element:<MyBooking/>
+      },
+      {
+        path:'payment-history',
+        element:<PaymentHistory/>
       }
     ],
   },

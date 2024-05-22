@@ -2,7 +2,7 @@ import featured from "../../assets/home/featured.jpg";
 import "./featured.css";
 const Featured = () => {
   return (
-    <main className="background-featured bg-fixed mb-24">
+    <main className="background-featured bg-fixed bg-cover bg-no-repeat mb-24">
       <div className="bg-[#151515B2] opacity-90 "> 
         <div className="p-16">
           <h2 className="text-center italic font-cinzel text-[#D99904]">
@@ -17,7 +17,7 @@ const Featured = () => {
 
         <div className="md:flex justify-center items-center px-24 py-24 gap-16 text-white ">
           <div>
-            <img src={featured} alt="" />
+            <img className="bg-cover bg-no-repeat" src={featured} alt="" />
           </div>
           <div>
             <p>19 May 2024</p>
