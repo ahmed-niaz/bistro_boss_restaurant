@@ -8,7 +8,7 @@ const ProtectedRoutes = ({ children }) => {
   if (loading) return <Loader />;
   if (user?.email) return children;
 
-  return <Navigate state={location.pathname} to="/login" replace={true} />;
+  return <Navigate state={{ from: location }} to="/login" replace={true} />;
 };
 ProtectedRoutes.propTypes = {
   children: PropTypes.node.isRequired,

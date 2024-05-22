@@ -11,7 +11,7 @@ import useAuth from "./../hooks/useAuth";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import toast from "react-hot-toast";
 const Login = () => {
-  const { user, login } = useAuth();
+  const { login } = useAuth();
   const navigate = useNavigate()
   const location = useLocation()
   const from = location.state?.from?.pathname || '/'

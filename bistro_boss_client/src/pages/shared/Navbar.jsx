@@ -1,11 +1,11 @@
-
 import { Link, NavLink } from "react-router-dom";
 import useAuth from "../../hooks/useAuth";
-
-
+import cartIcon from '../../assets/icon/cart.png'
+import useCart from "../../hooks/useCart";
 const Navbar = () => {
-    const { user, logout } = useAuth()
-
+  const { user, logout } = useAuth();
+  const [cart] = useCart()
+  console.log('cart data',cart);
   const links = (
     <>
       <li>
@@ -66,6 +66,16 @@ const Navbar = () => {
           }
         >
           our shop
+        </NavLink>
+      </li>
+      <li>
+        <NavLink to="/our-shop/salad" className={({ isActive }) =>
+            isActive
+              ? " uppercase text-[#EEFF25] bg-none text-sm font-bold"
+              : "text-sm font-bold text-white"
+          }>
+         <img className="w-8" src={cartIcon} alt={cartIcon} />
+         <div className="font-extrabold">{cart.length}</div>
         </NavLink>
       </li>
     </>
@@ -143,18 +153,20 @@ const Navbar = () => {
                 </li>
               </ul>
             </div>
-          ) : <div>
-          <NavLink
-            to="/login"
-            className={({ isActive }) =>
-              isActive
-                ? " uppercase text-[#EEFF25] bg-none text-sm font-bold"
-                : "text-sm font-bold text-white"
-            }
-          >
-            login
-          </NavLink>
-        </div>}
+          ) : (
+            <div>
+              <NavLink
+                to="/login"
+                className={({ isActive }) =>
+                  isActive
+                    ? " uppercase text-[#EEFF25] bg-none text-sm font-bold"
+                    : "text-sm font-bold text-white"
+                }
+              >
+                login
+              </NavLink>
+            </div>
+          )}
         </div>
       </div>
     </main>
