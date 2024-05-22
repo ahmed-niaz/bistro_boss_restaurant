@@ -1,6 +1,6 @@
 import axios from "axios";
 export const axiosSecure = axios.create({
-  baseURL: "https://bistro-boss-server-iota-pied.vercel.app",
+  baseURL: `${import.meta.env.VITE_API_URL}`,
 });
 const useAxiosSecure = () => {
   return axiosSecure;
