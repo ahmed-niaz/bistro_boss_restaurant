@@ -4,6 +4,7 @@ import left_side_bg from "../assets/login/left_sided_bg.png";
 import SocialLogin from "../components/SocialLogin";
 import useAuth from "./../hooks/useAuth";
 import toast from "react-hot-toast";
+import { axiosPublic } from "../hooks/useAxiosPublic";
 
 const Register = () => {
   const { createUser, updateUserProfile } = useAuth();
@@ -26,10 +27,18 @@ const Register = () => {
     createUser(email, password).then((result) => {
       console.log(result.user);
       updateUserProfile(name, imgURL).then(() => {
-        console.log(`user profile update`);
-        form.reset();
-        toast.success("Registration Successful");
-        navigate("/");
+        const userInfo = {
+          name: name,
+          email: email,
+        };
+        axiosPublic.post(`/users`, userInfo).then((res) => {
+          if (res.data.insertedId) {
+            console.log(`user profile update`);
+            form.reset();
+            toast.success("Registration Successful");
+            navigate("/");
+          }
+        });
       });
     });
   };

@@ -13,6 +13,7 @@ import AddReview from "../dashboardPages/AddReview";
 import Reservation from "../dashboardPages/Reservation";
 import MyBooking from "../dashboardPages/MyBooking";
 import PaymentHistory from "../dashboardPages/PaymentHistory";
+import ProtectedRoutes from './ProtectedRoutes';
 
 export const router = createBrowserRouter([
   {
@@ -44,7 +45,9 @@ export const router = createBrowserRouter([
   },
   {
     path: "dashboard",
-    element: <Dashboard />,
+    element: <ProtectedRoutes>
+      <Dashboard />
+    </ProtectedRoutes>,
     children: [
       {
         path: "my-cart",
